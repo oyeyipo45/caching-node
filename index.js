@@ -3,14 +3,12 @@ const cors = require('cors')
 require('dotenv').config()
 
 
-const PORT = process.env.PORT || 400
+const PORT = process.env.PORT || 4000
 
 const app = express()
 
 
-app.get('/api', (req, res) => {
-    res.json({sucess: true})
-})
+app.use('/api', require('./routes'))
 
 app.use(cors())
 
